@@ -15,3 +15,18 @@ A recommendation system helps users find compelling content in a large mass of d
 
 ### Natural Language Processing (NLP): 
 NLP makes it possible for computers to understand the human language. NLP analyzes the grammatical structure of sentences and uses algorithms to find and extract the individual meaning of words. We are most accustomed to NLP schemes with virtual assistants like Alexa or Siri, that translate spoken text into meaning that the machines can understand. For this project, we will be performing some NLP analysis on Airbnb listing descriptions and incoorporating a sentiment analysis in the recommendation engine. 
+
+## Data Understanding
+San Diego is a city that I frequently visit on the west coast. Therfore, I was compelled to work on a dataset of Airbnb listings within the area. 
+
+The dataset for this project consists of over 13,000 rows of data for <a href = 'https://data.world/ajsanne/san-diego-airbnb'> San Diego Airbnb Listings as of August 2019 </a> and publicly sourced from data.world via Inside Airbnb.
+
+There are 75 features and in general, consist of the following: 
+- unique listing ids & urls,
+- text descriptions of the listing (name, summary, space, neighborhood overview, amenities, house rules, city, neighborhood, property type, room_type, bed type, etc),
+- text descriptions of the host (host name, about, response time, location, etc)
+- numerical descriptions (host response rate/time, number of bathrooms, bedrooms, accommodation, price, number of stays, number of reviews, review scores, etc)
+- binary values (instant bookable, license requirements, host identity verfication status, etc)
+
+
+
