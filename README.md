@@ -6,7 +6,8 @@ Airbnb is an online marketplace that is focussed on connecting people who rent o
 
 I personally love traveling to the west coast and finding unique Airbnb listings. Sometimes I'd find myself wanting to go back but have trouble looking for a similar experience. There is currently no system in place where Airbnb will provide (or recommend) similar homes I have previously stayed in. 
 
-So that got me thinking; **Can I develop a machine learning recommendation system that can provide recommendations for similar listings that I have stayed in? Additionally, what can we learn from text descriptions for Airbnb listings?**
+So that got me thinking:
+- **Can I develop a machine learning recommendation system that can provide recommendations for similar listings that I have stayed in? Additionally, what can we learn from text descriptions for Airbnb listings?**
 
 For this analysis, the following machine learning concepts were practiced:
 
