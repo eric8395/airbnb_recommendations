@@ -30,9 +30,19 @@ There are 75 features and in general, consist of the following:
 - binary values (instant bookable, license requirements, host identity verfication status, etc)
 
 ### Data Cleaning & Preprocessing
-In general, the following steps below describe the major data cleaning and preprocessing performed before conducting analysis. For more detailed steps, please refer to the 'Data Cleaning' notebook found in this repository. 
+In general, the following steps below describe the major data cleaning and preprocessing performed before conducting analysis. For more detailed steps, please refer to the 'Data Cleaning' and 'Preprocessing, Data Visualization, Clustering' notebooks found in this repository. 
 
 - **Handling Missing Values:** There were many missing values discovered in dataset. For example, `host_response_time` contained over 2,100 rows of missing entries. Since this was a categorical ordinal column, these missing values were imputed with an 'N/A' value to represent Airbnb hosts who have not responded back to hostees. Other numerical missing values such as `security_deposits` were imputed with the value 0 (assuming that a security deposit was not needed for the listings). 
 
-- Encoding Categorical Features and Values: 
+- **Encoding Categorical Features and Values:** Categorical features were split into ordinal and nominal features. Ordinal features (columns where the values have a structured order) consisted of `host_response_time` and `cancellation_policy` and were encoded using an `OrdinalEncoder`. Nominal features (columns where values have no order of precedence) consisted of all other categorical features (ie. `property_type`) and were one hot encoded. 
+
+- **Standard Scaling:** All other numerical columns consisting of integer and float values were subsequently scaled using a `StandardScaler`. 
+
+In total, the preprocessed dataset consisted of **13,039 listings and 240 features**. 
+
+## Clustering Analysis
+<a href = 'https://umap-learn.readthedocs.io/en/latest/' /> A Uniform Manifold Approximation and Project (UMAP) </a> dimensionality reduction technique was leveraged to create a clustering visualization of all data points following preprocessing. 
+
+Clustering labels were constructed using a MiniBatch KMeans iterating through the preprocessed dataset to determine optimum cluster size. A total of 5 unique cluster groups were generated with labels assigned to each individual listing. 
+
 
