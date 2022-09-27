@@ -14,6 +14,9 @@ For this analysis, the following machine learning concepts were practiced:
 ### Recommendation System:
 A recommendation system helps users find compelling content in a large mass of data. For example, a machine learning recommendation model determines how similar listings are to other listings then provides recommendations based on similarity. A recommendation engine can display items that users might not have been to search for on their own. This is the basis of most recommendation systems and the inspiration for this project. 
 
+### Cluster Analysis: 
+Clustering is a type of unsupervised learning method, whereby information among groups are gained from unlabled data. Clustering allows machines to pick up on similar or dissimilar patterns that would otherwise be difficult to discern. We can use clustering as a means to group Airbnb listings when it comes to finding recommendations of similar listings. 
+
 ### Natural Language Processing (NLP): 
 NLP makes it possible for computers to understand the human language. NLP analyzes the grammatical structure of sentences and uses algorithms to find and extract the individual meaning of words. We are most accustomed to NLP schemes with virtual assistants like Alexa or Siri, that translate spoken text into meaning that the machines can understand. For this project, we will be performing some NLP analysis on Airbnb listing descriptions and incoorporating a sentiment analysis in the recommendation engine. 
 
