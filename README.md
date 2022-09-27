@@ -1,4 +1,4 @@
-# (WORK IN PROGRESS) Airbnb Recommendations & Natural Language Processing (NLP) Analysis
+# (WORK IN PROGRESS) Airbnb Recommendations, Clustering, & Natural Language Processing (NLP) Analysis
 
 Airbnb is an online marketplace that is focussed on connecting people who rent out their homes with people who are looking for accommodations around the world. If you're like me and love to travel, Airbnb provides a cheaper alternative to hotels while also offering an eccentric experience that adds value to vacations. 
 
