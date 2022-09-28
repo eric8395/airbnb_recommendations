@@ -54,7 +54,24 @@ Below is a snippet image of San Diego Airbnb Listings Embedding via UMAP whereby
 <img width="495" alt="bokeh clusters" src="https://user-images.githubusercontent.com/86889081/192680072-ec7387ea-086e-4842-916a-7d11646cbfc8.png">
 <p align="center"> 
 
+The following observations about each cluster group can be generally summarized as follows:
+  
+**Cluster Label 0 (Red) - Favorable high end listings**
+- Favorable and wide range of review rating. Most expensive listings and mostly consist of entire home room types.
+  
+**Cluster Label 1 (Orange) - Favorable highly rated & moderately priced listings**
+- Popular group, generally > 90 review ratings, relatively inexpensive. Mostly houses or private rooms, wide range of property types.
+  
+**Cluster Label 2 (Yellow) - Favorable moderately priced diverse listings**
+- Most popular group, mostly favorable ratings. Relatively low priced. Wide range of property types.
+  
+**Cluster Label 3 (Green) - Favorable and least expensive listings**
+- Popular group and wide range of review rating. Least expensive group. Wide range of property types.
+  
+**Cluster Label 4 (Purple) - Unfavorable listings**
+- Least popular group and lowest rated listings.
 
+## Natural Language Processing 
 
 
 
