@@ -49,3 +49,13 @@ In total, the preprocessed dataset consisted of **13,039 listings and 240 featur
 Clustering labels were constructed using a MiniBatch KMeans iterating through the preprocessed dataset to determine optimum cluster size. A total of 5 unique cluster groups were generated with labels assigned to each individual listing. 
 
 
+<p align="center">
+<img width="495" alt="bokeh clusters" src="https://user-images.githubusercontent.com/86889081/192680072-ec7387ea-086e-4842-916a-7d11646cbfc8.png">
+<p align="center"> 
+<p align="center">
+San Diego Airbnb Listings Embedding via UMAP
+<p align="center">
+
+
+
+
