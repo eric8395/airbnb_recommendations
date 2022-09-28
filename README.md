@@ -48,7 +48,7 @@ In total, the preprocessed dataset consisted of **13,039 listings and 240 featur
 
 Clustering labels were constructed using a MiniBatch KMeans iterating through the preprocessed dataset to determine optimum cluster size. A total of 5 unique cluster groups were generated with labels assigned to each individual listing. 
 
-Below is a snippet image of San Diego Airbnb Listings Embedding via UMAP whereby users can hover over each individual data point to obtain a better understanding of the features associated within each cluster. Visualization is generated using Bokeh. 
+Below is a snippet image of **San Diego Airbnb Listings Embedding via UMAP** whereby users can hover over each individual data point to obtain a better understanding of the features associated within each cluster. Visualization is generated using Bokeh. 
 
 <p align="center">
 <img width="495" alt="bokeh clusters" src="https://user-images.githubusercontent.com/86889081/192680072-ec7387ea-086e-4842-916a-7d11646cbfc8.png">
@@ -71,7 +71,7 @@ The following observations about each cluster group can be generally summarized 
 **Cluster Label 4 (Purple) - Unfavorable listings**
 - Least popular group and lowest rated listings.
 
-## Natural Language Processing 
+## Natural Language Processing - Visualizing Text Descriptions
 
 
 
