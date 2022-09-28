@@ -27,13 +27,13 @@ The dataset for this project consists of over 13,000 rows of data for <a href = 
 
 There are 75 features and in general, consist of the following: 
 - unique listing ids & urls,
-- text descriptions of the listing (name, summary, space, neighborhood overview, amenities, house rules, city, neighborhood, property type, room_type, bed type, etc),
+- text descriptions of the listing (name, summary, space, neighborhood overview, amenities, house rules, city, neighborhood, property type, room type, bed type, etc),
 - text descriptions of the host (host name, about, response time, location, etc)
 - numerical descriptions (host response rate/time, number of bathrooms, bedrooms, accommodation, price, number of stays, number of reviews, review scores, etc)
 - binary values (instant bookable, license requirements, host identity verfication status, etc)
 
 ### Data Cleaning & Preprocessing
-In general, the following steps below describe the major data cleaning and preprocessing performed before conducting analysis. For more detailed steps, please refer to the 'Data Cleaning' and 'Preprocessing, Data Visualization, Clustering' notebooks found in this repository. 
+In general, the following steps below describe the major data cleaning and preprocessing performed before conducting analysis. For more detailed steps, please refer to the *'Data Cleaning'* and *'Preprocessing, Data Visualization, Clustering'* notebooks found in this repository. 
 
 - **Handling Missing Values:** There were many missing values discovered in dataset. For example, `host_response_time` contained over 2,100 rows of missing entries. Since this was a categorical ordinal column, these missing values were imputed with an 'N/A' value to represent Airbnb hosts who have not responded back to hostees. Other numerical missing values such as `security_deposits` were imputed with the value 0 (assuming that a security deposit was not needed for the listings). 
 
