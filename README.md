@@ -73,5 +73,17 @@ The following observations about each cluster group can be generally summarized 
 
 ## Natural Language Processing - Visualizing Text Descriptions
 
+Wordcloud visualizations were constructed for each text column in the Airbnb Listings dataset. The text columns were preprocessed and normalized as follows:
+- Missing values are imputed with 'blank' text
+- Text in each column are tokenized. Tokenization is a process by which the text is broken down into smaller units and subwords. Stopwords and other text without much value were also removed during this step. 
+  
+<p align="center">
+<img width="400" src="https://github.com/eric8395/airbnb_recommendations/blob/main/images/wordcloud_summary.png">
+  
+  
+### Average Sentiment by Feature  
+
+<p align="center">
+<img width="664" alt="sentiment chart" src="https://user-images.githubusercontent.com/86889081/193640408-fa1c0057-8dd2-4351-a7ff-cde5e42d5330.png">
 
 
