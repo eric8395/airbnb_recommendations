@@ -4,8 +4,7 @@ import pandas as pd
 import streamlit as st
 import joblib
 import time
-
-st.image("https://media.istockphoto.com/photos/rear-view-of-baseball-batter-and-catcher-watching-the-pitch-picture-id1174867119?b=1&k=20&m=1174867119&s=170667a&w=0&h=Lpk2muXoNKWB8dTpak55rqwM1ffEddzgSZsmJeZKEvg=", use_column_width= 'always')
+from numpy.linalg import norm
 
 # Title
 st.title("Airbnb Recommendations")
@@ -13,98 +12,74 @@ st.title("Airbnb Recommendations")
 # Subtitle
 st.markdown("Select an Airbnb listing and get a recommendation for similar listings.")
 
-
 st.sidebar.markdown("#### Built by Eric Au")
 
-# input bar 1
-difference = st.number_input("Average Salary Difference (in $)")
-st.caption("*Note: Average Salary Difference is the average increase/decrease of a salary across a player's entire career. \
-For example, Derek Jeter's Average Salary Difference between 2012 and 2013 would be \\$1M if his salary was \\$14M in 2012 and \\$15M in 2013")
+# load in sd_trans dataframe to be transformed
+sd_trans = pd.read_csv('sd_trans', index_col = 0)
+# load in url_listings dataframe to be joined
+sd_listings_url = pd.read_csv('url_listings', index_col = 0)
 
-# input bar 2
-age = st.slider('Age', 18, 45, 25)
+# load in sd_pp
+sd_pp = pd.read_csv('sd_pp', index_col = 0)
+# load in sd_clustered
+sd_clustered = pd.read_csv('sd_clustered', index_col = 0)
 
-# input bar 3
-hits = st.slider('Hits', 0, 250, 100)
+# merge url listings with sd_trans
+sd_merged = sd_listings_url.join(sd_trans)
 
-# input bar 4
-runs= st.slider('Runs', 0, 200, 50)
+# select a listing from sd_merged
+selected_listing = st.selectbox("Choose a listing", sd_merged.listing_url)
+# based on selected listing, get the index from sd_pp
+index_value = selected_listing.index
+selected_listing_df = sd_pp.iloc[[index_value]]
 
-# input bar 5
-rbi = st.slider('RBIs', 0, 200, 75)
+# unpickle and load in column transformer
+ct = joblib.load("column_transformer.pkl")
 
-# input bar 6
-walks = st.slider('Walks', 0, 250, 50)
+# get a recommendation based on url selection
+def get_recommendations(df, listing):
+    """
+    Takes in preprocessed dataframe and selected listing as inputs and gives top 5 (including listing)
+    recommendations based on cosine similarity. 
+    """
+    # reset the index
+    df = df.reset_index(drop = 'index')
+    
+    # convert single listing to an array
+    listing_array = listing.values
 
-# input bar 7
-so = st.slider('Strikeouts', 0, 250, 50)
+    # convert all listings to an array
+    df_array = df.values
+    
+    # get arrays into a single dimension
+    A = np.squeeze(np.asarray(df_array))
+    B = np.squeeze(np.asarray(listing_array))
+    
+    # compute cosine similarity 
+    cosine = np.dot(A,B)/(norm(A, axis = 1)*norm(B))
+    
+    # add similarity into recommendations df and reset the index
+    rec = sd_clustered.copy().reset_index(drop = 'index')
+    rec['similarity'] = pd.DataFrame(cosine).values
+    
+    # reorder column names
+    rec = rec[['id','listing_url', 'similarity', 'cluster_label', 'latitude', 'longitude',
+       'neighbourhood_cleansed', 'zipcode', 'property_type', 'room_type',
+       'accommodates', 'bathrooms', 'bedrooms', 'beds', 'bed_type',
+       'nightly_price', 'price_per_stay', 'security_deposit', 'cleaning_fee',
+       'guests_included', 'extra_people', 'minimum_nights', 'maximum_nights',
+       'host_response_time', 'host_response_rate', 'host_is_superhost',
+       'host_total_listings_count', 'host_has_profile_pic',
+       'host_identity_verified', 'number_of_reviews', 'number_of_stays',
+       'review_scores_rating', 'review_scores_accuracy',
+       'review_scores_cleanliness', 'review_scores_checkin',
+       'review_scores_communication', 'review_scores_location',
+       'review_scores_value', 'requires_license', 'instant_bookable',
+       'is_business_travel_ready', 'cancellation_policy',
+       'require_guest_profile_picture', 'require_guest_phone_verification']]
+    
+    # sort by top 5 descending
+    return rec.sort_values(by = ['similarity'], ascending = False).head(6)
 
-# input bar 8
-sb = st.slider('Stolen Bases', 0, 100, 10)
-
-# input bar 9
-ops = st.number_input("Enter OPS")
-
-# if button is pressed
-if st.button("Submit"):
-
-    # unpickle the batting model
-    bb_model = joblib.load("pkl/bb_model.pkl")
-
-    # store inputs into df
-
-    column_names = ['Salary Difference', 'Age', 'H', 'R', 'RBI', 'BB', 'SO', 'SB', 'OPS']
-    df = pd.DataFrame([[difference, age, hits, runs, rbi, walks, so, sb, ops]], 
-                     columns = column_names)
-
-    # get prediction
-    prediction = bb_model.predict(df)
-
-    # convert prediction
-    converted = round(np.exp(prediction)[0],0)
-
-    with st.spinner('Calculating...'):
-        time.sleep(1)
-    st.success('Done!')
-
-    st.dataframe(df)
-
-    # output prediction
-    st.header(f"Predicted Player Salary: ${converted:,}")
-
-# header
-st.markdown("### How do the predictions compare to 2022 stats thus far?")
-st.markdown("###### Updated: Aug 24, 2022")
-
-# 2022 batter dataframe
-batter_2022_df = pd.read_csv('batting_merged_2022', index_col = 0)
-# reformat 2022 batter df for model prediction
-df_to_predict = batter_2022_df.drop(columns = ['Name', '2022 Salary'])
-
-# load in model
-bb_model = joblib.load("pkl/bb_model.pkl")
-
-# make prediction
-predictions_2022 = bb_model.predict(df_to_predict)
-
-# Add prediction column
-batter_2022_df["Predicted Salary"] = np.around(np.exp(predictions_2022),0)
-
-# Add value column
-batter_2022_df.loc[batter_2022_df['Predicted Salary'] > batter_2022_df['2022 Salary'], 'Value?'] = 'Under-valued'
-batter_2022_df.loc[batter_2022_df['Predicted Salary'] < batter_2022_df['2022 Salary'], 'Value?'] = 'Over-valued'
-
-# reorder columns
-batter_2022_df = batter_2022_df[['Name', '2022 Salary', 'Predicted Salary', 'Value?', 'Avg Career Salary Difference', 'Age', \
-                                'H', 'R', 'RBI', 'BB', 'SO', 'SB', 'OPS']]
-
-# formatting as Millions
-batter_2022_df['2022 Salary'] = batter_2022_df['2022 Salary'].div(1000000).round(2)
-batter_2022_df['Predicted Salary'] = batter_2022_df['Predicted Salary'].div(1000000).round(2)
-batter_2022_df['Avg Career Salary Difference'] = batter_2022_df['Avg Career Salary Difference'].div(1000000).round(2)
-
-batter_2022_df = batter_2022_df.rename(columns = {'2022 Salary':'2022 Salary ($ Millions)',
-                                                  'Predicted Salary':'Predicted Salary ($ Millions)',
-                                                  'Avg Career Salary Difference':'Avg Career Salary Difference ($ Millions)'})
-
-st.dataframe(batter_2022_df)
+# get recommendation
+get_recommendations(sd_pp, selected_listing_df)
