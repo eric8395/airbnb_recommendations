@@ -20,7 +20,9 @@ col1.markdown(" Select an Airbnb listing and get a recommendation for similar li
 # ----------------------------------------------- #
 
 # load in sd_trans dataframe to be transformed
-sd_trans = pd.read_csv('sd_trans', index_col = 0)
+# sd_trans = pd.read_csv('sd_trans', index_col = 0)
+
+sd_trans = open('sd_trans', 'wb')
 
 # load in url_listings dataframe to be joined
 sd_listings_url = pd.read_csv('url_listings', index_col = 0)
