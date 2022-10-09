@@ -2,9 +2,11 @@ import numpy as np
 import pickle
 import pandas as pd
 import streamlit as st
-import joblib
 import time
+import joblib
 from numpy.linalg import norm
+
+
 
 # formatting, create 3 columns
 col1, col2, col3 = st.columns([1,0.25,1])
