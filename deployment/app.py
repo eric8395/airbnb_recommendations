@@ -3,6 +3,7 @@ import pickle
 import pandas as pd
 import streamlit as st
 import time
+import os
 from numpy.linalg import norm
 
 # formatting, create 3 columns
