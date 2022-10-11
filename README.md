@@ -9,6 +9,12 @@ I personally love traveling to the west coast and finding unique Airbnb listings
 So that got me thinking:
 - **Can I develop a machine learning recommendation system that can provide recommendations for similar listings that I have stayed in? Additionally, what can we learn from text descriptions for Airbnb listings?**
 
+## Web Application Deployment 
+A web application deployed through Streamlit was developed and can be accessed <a href = 'https://eric8395-airbnb-recommendations-app-app-fb49vg.streamlitapp.com/'>here</a>. For more information on deployment of the application, refer to this <a href = 'https://github.com/eric8395/airbnb_recommendations_app'>repository</a>. 
+
+<img width="913" alt="Screen Shot 2022-10-10 at 3 38 16 PM" src="https://user-images.githubusercontent.com/86889081/194940447-f20d7f8b-75e4-462a-8cf0-34a849666be5.png">
+
+## Machine Learning Concepts
 For this analysis, the following machine learning concepts were practiced:
 
 ### Recommendation System:
