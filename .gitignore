@@ -13,6 +13,10 @@ __pycache__/
 # ignore scraping notebook
 *Scraping SD Airbnb Text Reviews.ipynb
 
+# ignore ppl
+*/pkl
+*.pkl
+
 # Distribution / packaging
 .Python
 build/
