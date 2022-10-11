@@ -10,7 +10,7 @@ So that got me thinking:
 - **Can I develop a machine learning recommendation system that can provide recommendations for similar listings that I have stayed in? Additionally, what can we learn from text descriptions for Airbnb listings?**
 
 ## Web Application Deployment 
-I developed a web application deployed through Streamlit that provides a user friendly interface for generating Airbnb recommendations. 
+I developed a web application deployed through Streamlit that provides a user friendly interface for generating Airbnb recommendations. Users have the ability to either input a recent stay or find their own personalized stay with custom inputs. Recommendations are subsequently generated for similar Airbnb listings. Feel free to check it out for yourself below!
 
 **Application:** <a href = 'https://eric8395-airbnb-recommendations-app-app-fb49vg.streamlitapp.com/'>Discover San Diego!</a>
 
