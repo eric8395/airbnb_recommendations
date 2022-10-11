@@ -89,11 +89,28 @@ Wordcloud visualizations were constructed for each text column in the Airbnb Lis
   
 <p align="center">
 <img width="400" src="https://github.com/eric8395/airbnb_recommendations/blob/main/images/wordcloud_summary.png">
-  
-  
+
+**Findings**
+- Most listings tend to be described as scenic and picturesque by the beach (or some variation of paradise).
+- A lot of listings are ironically "hidden".
+- Must have wifi, tv, parking, and large beds!
+- The hosts must have a lot of spare time to rent out Airbnbs as their side jobs are also involved in entertainment.
+
 ### Average Sentiment by Feature  
+
+A sentiment analysis was also performed and to gather further insights about how Airbnb listings are generally described. The process of understanding sentiment scores is described as follows:
+
+- **TextBlob Module:** Allows for the ability to place a score on sentiment of words based on where it is in a sentence.
+- **Sentiment Labels:** Each word in a corpus is labeled in terms of polarity and subjectivity.
+- **Polarity:** How positive or negative a word is; -1 is most negative, +1 is most positive
+- **Subjectivity:** How subjective, or opinionated a word is; 0 is fact, +1 is an opinion
 
 <p align="center">
 <img width="664" alt="sentiment chart" src="https://user-images.githubusercontent.com/86889081/193640408-fa1c0057-8dd2-4351-a7ff-cde5e42d5330.png">
+
+**Takeaways**
+- Airbnb listings tend to be positive when it comes to descriptions and summaries. This makes sense, hosts want to encourage people to stay at their Airbnb and having a positive description is beneficial. However, these descriptions tend to be grounded in opinion.
+- Factually based columns such as access, notes, and transit are unsurprisingly factual.
+- Interesting to note that amenities are considered very opinionated. One would expect that amenities would be more grounded in facts.
 
 
