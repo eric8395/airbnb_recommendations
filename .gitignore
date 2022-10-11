@@ -8,6 +8,7 @@ __pycache__/
 
 # ignore deployment folder
 /deployment
+deployment/
 
 
 # Distribution / packaging
