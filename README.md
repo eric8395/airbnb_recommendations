@@ -1,4 +1,4 @@
-# (WORK IN PROGRESS) Airbnb Recommendations, Clustering, & Natural Language Processing (NLP) Analysis
+# Airbnb Recommendations, Clustering, & Natural Language Processing (NLP) Analysis
 
 Airbnb is an online marketplace that is focussed on connecting people who rent out their homes with people who are looking for accommodations around the world. If you're like me and love to travel, Airbnb provides a cheaper alternative to hotels while also offering an eccentric experience that adds value to vacations. 
 
@@ -10,7 +10,11 @@ So that got me thinking:
 - **Can I develop a machine learning recommendation system that can provide recommendations for similar listings that I have stayed in? Additionally, what can we learn from text descriptions for Airbnb listings?**
 
 ## Web Application Deployment 
-A web application deployed through Streamlit was developed and can be accessed <a href = 'https://eric8395-airbnb-recommendations-app-app-fb49vg.streamlitapp.com/'>here</a>. For more information on deployment of the application, refer to this <a href = 'https://github.com/eric8395/airbnb_recommendations_app'>repository</a>. 
+I developed a web application deployed through Streamlit that provides a user friendly interface for generating Airbnb recommendations. 
+
+**Application:** <a href = 'https://eric8395-airbnb-recommendations-app-app-fb49vg.streamlitapp.com/'>Discover San Diego!</a>
+
+<a href = 'https://github.com/eric8395/airbnb_recommendations_app'>View Source Code</a>
 
 <img width="913" alt="Screen Shot 2022-10-10 at 3 38 16 PM" src="https://user-images.githubusercontent.com/86889081/194940447-f20d7f8b-75e4-462a-8cf0-34a849666be5.png">
 
