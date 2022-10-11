@@ -113,4 +113,9 @@ A sentiment analysis was also performed and to gather further insights about how
 - Factually based columns such as access, notes, and transit are unsurprisingly factual.
 - Interesting to note that amenities are considered very opinionated. One would expect that amenities would be more grounded in facts.
 
+## Next Steps & Recommendation System Limitations
+Having constructed a recommendation system based on user based content filtering, there are a few nuances as part of this project:
+- URL links are not entirely up to date. Since the data for this recommendation system consists of 2019 data, there are instances where the url links to the actual Airbnb listing do not exist anymore. However, conceptually, the recommendation system is still effective when it comes to analysis of other content based features. 
+
+- While the dataset contained textual data, the sentiment analysis was limited to description of listings by the hosts. Moving forward, I'd like to incoorporate a sentiment analysis of users who have previously stayed at a listing (ie. user reviews). With this analysis, there is potential to create a recommendation system of ideal Airbnb listings based on the sentiment analysis of user reviews. 
 
