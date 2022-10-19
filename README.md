@@ -31,7 +31,7 @@ Clustering is a type of unsupervised learning method, whereby information among 
 NLP makes it possible for computers to understand the human language. NLP analyzes the grammatical structure of sentences and uses algorithms to find and extract the individual meaning of words. We are most accustomed to NLP schemes with virtual assistants like Alexa or Siri, that translate spoken text into meaning that the machines can understand. For this project, we will be performing some NLP analysis on Airbnb listing descriptions to gain some insight into how Airbnb listings are typically described. 
 
 ## Data Understanding
-San Diego is a city that I frequently visit on the west coast. Therfore, I was compelled to work on a dataset of Airbnb listings within the area. 
+San Diego is a city that I frequently visit on the west coast. Therefore, I was compelled to work on a dataset of Airbnb listings within the area. 
 
 The dataset for this project consists of over 13,000 rows of data for <a href = 'https://data.world/ajsanne/san-diego-airbnb'> San Diego Airbnb Listings as of August 2019 </a> and publicly sourced from data.world via Inside Airbnb.
 
