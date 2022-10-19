@@ -22,7 +22,7 @@ I developed a web application deployed through Streamlit that provides a user fr
 For this analysis, the following machine learning concepts were practiced:
 
 ### Recommendation System:
-A recommendation system helps users find compelling content in a large mass of data. For example, a machine learning recommendation model determines how similar listings are to other listings then provides recommendations based on similarity. A recommendation engine can display items that users might not have been to search for on their own. This is the basis of most recommendation systems and the inspiration for this project. 
+A recommendation system helps users find compelling content in a large mass of data. For example, a machine learning recommendation model determines how similar listings are to other listings then provides recommendations based on similarity. A recommendation engine can display items that users might not have been able to search for on their own. This is the basis of most recommendation systems and the inspiration for this project. 
 
 ### Cluster Analysis: 
 Clustering is a type of unsupervised learning method, whereby information among groups are gained from unlabled data. Clustering allows machines to pick up on similar or dissimilar patterns that would otherwise be difficult to discern. We can use clustering as a means to group Airbnb listings when it comes to finding recommendations of similar listings. 
