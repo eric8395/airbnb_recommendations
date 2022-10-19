@@ -40,7 +40,7 @@ There are 75 features and in general, consist of the following:
 - text descriptions of the listing (name, summary, space, neighborhood overview, amenities, house rules, city, neighborhood, property type, room type, bed type, etc),
 - text descriptions of the host (host name, about, response time, location, etc)
 - numerical descriptions (host response rate/time, number of bathrooms, bedrooms, accommodation, price, number of stays, number of reviews, review scores, etc)
-- binary values (instant bookable, license requirements, host identity verfication status, etc)
+- binary values (instant bookable, license requirements, host identity verification status, etc)
 
 ### Data Cleaning & Preprocessing
 In general, the following steps below describe the major data cleaning and preprocessing performed before conducting analysis. For more detailed steps, please refer to the *'Data Cleaning'* and *'Preprocessing, Data Visualization, Clustering'* notebooks found in this repository. 
