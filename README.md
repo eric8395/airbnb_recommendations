@@ -81,6 +81,30 @@ The following observations about each cluster group can be generally summarized 
 **Cluster Label 4 (Purple) - Unfavorable listings**
 - Least popular group and lowest rated listings.
 
+## Constructing the Recommendation Engine With Cosine Similarity
+
+In order to construct a recommendation for an individual Airbnb listing, the mathematical concept of cosine similarity was leveraged.
+
+In short, cosine similarity measures the similarity between two vector points in a defined space using the cosine angle between these two vectors.
+For two items, cosine similarity measures how far apart (or similar) each item are away from each other. 
+
+In order to calculate cosine similarity, the preprocessed dataset and user selected listing need to be converted to 2-dimensional arrays. In this context, these are individual arrays of Number of Rows x Number of Columns in each respective dataset.
+
+Cosine similarity values for all listings consisting of all features in the dataset are calculated and sorted by top 5 most similar listings to generate recommendations. 
+
+<img width="1075" alt="Screen Shot 2022-10-30 at 11 50 08 AM" src="https://user-images.githubusercontent.com/86889081/199079968-ff04fc67-f972-465a-a9a7-61ac8f6991f6.png">
+
+**Constructing a Simplified Recommendation System**
+
+Focussing on user interpretability and convenience, a simplified recommendation system was also constructed with the same concept of utilizing cosine similarity. However, instead of incorporating all 240 features in the preprocessed dataset, the simplified preprocessed dataset was reduced to having 147 features instead. 
+
+<img width="1098" alt="Screen Shot 2022-10-31 at 2 21 34 PM" src="https://user-images.githubusercontent.com/86889081/199081262-131d1d5a-bc8a-4275-9a07-af34393f5476.png">
+
+With the remaining features in the simplified dataset, user inputs are fed into the recommendation engine to produce similar recommendations. 
+
+https://user-images.githubusercontent.com/86889081/199085374-5e579256-0875-42cc-b94e-6f9a2c9b2728.mov
+
+
 ## Natural Language Processing - Visualizing Text Descriptions
 
 Wordcloud visualizations were constructed for each text column in the Airbnb Listings dataset. The text columns were preprocessed and normalized as follows:
